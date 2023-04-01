@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app.kubernetes.io/name: devoxxfr23
+  name: devoxxfr23
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app.kubernetes.io/name: devoxxfr23
+      app.kubernetes.io/version: "1.0"
+  template:
+    metadata:
+      labels:
+        app.kubernetes.io/name: devoxxfr23
+        app.kubernetes.io/version: "1.0"
+    spec:
+      containers:
+        - image: sebi2706/devoxxfr23:1.0
+          imagePullPolicy: Always
+          name: devoxxfr23
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP
