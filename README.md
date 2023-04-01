@@ -111,6 +111,26 @@ Setting requests and limits :
 
 `kubectl apply -f manifests/devoxxfr23-v1-deployment-health.yml`
 
+Go into the pod : 
+
+`kubectl exec -it pod-id -- /bin/bash`
+
+Force the readiness probe to fail : 
+
+`curl localhost:8080/health/misbehave`
+
+Observe pod's status.
+
+Make pod ready again : 
+
+`curl localhost:8080/health/behave`
+
+Make pod a zombie and make liveness check fail : 
+
+`curl localhost:8080/health/shot`
+
+Observice pod getting restarted. 
+
 ## Playing with service `selector` 
 
 Deploy a second version of the deployment : 
