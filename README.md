@@ -16,7 +16,7 @@ With labels :
 
 Create a namespace : 
 
-`kubectl create deployment devoxxfr`
+`kubectl create namespace devoxxfr`
 
 Set the context to this namespace : 
 
