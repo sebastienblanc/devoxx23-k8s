@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "devoxxfr23"
+spec:
+  containers:
+  - name: "devoxxfr23"
+    image: "sebi2706/devoxxfr23:1.0"
+    ports:
+    - containerPort:  8080
+      name:  http
+   
