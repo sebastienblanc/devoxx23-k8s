@@ -153,3 +153,34 @@ selector:
 
 Save and exit. 
 
+## ConfigMap 
+
+`kubectl set env deployment/devoxxfr23-v2 GREETING=hola`
+
+`kubectl create cm my-config --from-env-file=my.properties`
+
+`kubectl apply -f manifests/devoxxfr23-v1-deployment-configmap`
+
+## Secret
+
+`kubectl create secret generic mysecret --from-literal=user='MyUserName' --from-literal=password='mypassword'`
+
+`kubectl get secret mysecret -o yaml`
+
+`kubectl replace -f manifests/devoxxfr23-v1-deployment-secrets.yml`
+
+## Taint
+
+`kubectl describe nodes | egrep "Name:|Taints:"`
+
+`kubectl taint nodes --all=true color=blue:NoSchedule`
+
+`kubectl taint node devnation-m02 color:NoSchedule- `
+
+`kubectl taint nodes --all=true color=blue:NoSchedule --overwrite`
+
+`kubectl label nodes devnation-m02 color=blue `
+
+
+
+
