@@ -127,7 +127,7 @@ Make pod ready again :
 
 Make pod a zombie and make liveness check fail : 
 
-`curl localhost:8080/health/shot`
+`curl localhost:8080/health/shoot`
 
 Observice pod getting restarted. 
 
